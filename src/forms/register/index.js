@@ -170,203 +170,215 @@ class RegisterForm extends Component {
         <div>
           <h2 className="styled-header">Members</h2>
           <div className="small-12 large-8 large-offset-2">
-            <h3>Member 1</h3>
+            <h3 className="styled-header">Member 1</h3>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 1 First Name</h4></label>
+              <label className="columns small-4"><h4>First Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8" onChange={this.handleMember1FirstName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 1 Last Name</h4></label>
+              <label className="columns small-4"><h4>Last Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember1LastName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 1 Email</h4></label>
+              <label className="columns small-4"><h4>Email</h4></label>
               <div className="small-8 columns">
                 <input type="email" className=" columns landing-input columns small-8"onChange={this.handleMember1Email} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 1 Phone Number</h4></label>
+              <label className="columns small-4"><h4>Phone Number</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember1PhoneNumber} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 1 Tshirt Size</h4></label>
-              <select name="tshirt_size" className="landing-input columns small-8"onChange={this.handleMember1TshirtSize}>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
+              <label className="columns small-4"><h4>Tshirt Size</h4></label>
+              <div className="columns small-8">
+                <select name="tshirt_size" className="landing-input"onChange={this.handleMember1TshirtSize}>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </div>
             </div>
 
           </div>
           <div className="small-12 large-6 large-offset-3">
-            <h3>Member 2</h3>
+            <h3 className="styled-header">Member 2</h3>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 2 First Name</h4></label>
+              <label className="columns small-4"><h4>First Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8" onChange={this.handleMember2FirstName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 2 Last Name</h4></label>
+              <label className="columns small-4"><h4>Last Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember2LastName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 2 Email</h4></label>
+              <label className="columns small-4"><h4>Email</h4></label>
               <div className="small-8 columns">
                 <input type="email" className=" columns landing-input columns small-8"onChange={this.handleMember2Email} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 2 Phone Number</h4></label>
+              <label className="columns small-4"><h4>Phone Number</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember2PhoneNumber} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 2 Tshirt Size</h4></label>
-              <select name="tshirt_size" className="landing-input columns small-8"onChange={this.handleMember2TshirtSize}>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
+              <label className="columns small-4"><h4>Tshirt Size</h4></label>
+              <div className="columns small-8">
+                <select name="tshirt_size" className="landing-input"onChange={this.handleMember2TshirtSize}>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </div> 
+
             </div>
 
           </div>
           <div className="small-12 large-6 large-offset-3">
-            <h3>Member 3</h3>
+            <h3 className="styled-header">Member 3</h3>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 3 First Name</h4></label>
+              <label className="columns small-4"><h4>First Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8" onChange={this.handleMember3FirstName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 3 Last Name</h4></label>
+              <label className="columns small-4"><h4>Last Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember3LastName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 3 Email</h4></label>
+              <label className="columns small-4"><h4>Email</h4></label>
               <div className="small-8 columns">
                 <input type="email" className=" columns landing-input columns small-8"onChange={this.handleMember3Email} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 3 Phone Number</h4></label>
+              <label className="columns small-4"><h4>Phone Number</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember3PhoneNumber} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 3 Tshirt Size</h4></label>
-              <select name="tshirt_size" className="landing-input columns small-8"onChange={this.handleMember3TshirtSize}>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
+              <label className="columns small-4"><h4>Tshirt Size</h4></label>
+              <div className="columns small-8">
+                <select name="tshirt_size" className="landing-input"onChange={this.handleMember3TshirtSize}>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </div>
             </div>
 
           </div>
           <div className="small-12 large-6 large-offset-3">
-            <h3>Member 4</h3>
+            <h3 className="styled-header">Member 4</h3>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 4 First Name</h4></label>
+              <label className="columns small-4"><h4>First Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8" onChange={this.handleMember4FirstName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 4 Last Name</h4></label>
+              <label className="columns small-4"><h4>Last Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember4LastName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 4 Email</h4></label>
+              <label className="columns small-4"><h4>Email</h4></label>
               <div className="small-8 columns">
                 <input type="email" className=" columns landing-input columns small-8"onChange={this.handleMember4Email} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 4 Phone Number</h4></label>
+              <label className="columns small-4"><h4>Phone Number</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember4PhoneNumber} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 4 Tshirt Size</h4></label>
-              <select name="tshirt_size" className="landing-input columns small-8"onChange={this.handleMember4TshirtSize}>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
+              <label className="columns small-4"><h4>Tshirt Size</h4></label>
+              <div className="columns small-8">
+                <select name="tshirt_size" className="landing-input"onChange={this.handleMember4TshirtSize}>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </div>
             </div>
 
           </div>
           <div className="small-12 large-6 large-offset-3">
-            <h3>Member 5</h3>
+            <h3 className="styled-header">Member 5</h3>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 5 First Name</h4></label>
+              <label className="columns small-4"><h4>First Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8" onChange={this.handleMember5FirstName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 5 Last Name</h4></label>
+              <label className="columns small-4"><h4>Last Name</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember5LastName} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 5 Email</h4></label>
+              <label className="columns small-4"><h4>Email</h4></label>
               <div className="small-8 columns">
                 <input type="email" className=" columns landing-input columns small-8"onChange={this.handleMember5Email} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 5 Phone Number</h4></label>
+              <label className="columns small-4"><h4>Phone Number</h4></label>
               <div className="small-8 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember5PhoneNumber} />
               </div>
             </div>
             <div className="columns small-12">
-              <label className="columns small-4"><h4>Member 5 Tshirt Size</h4></label>
-              <select name="tshirt_size" className="landing-input columns small-8"onChange={this.handleMember5TshirtSize}>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
+              <label className="columns small-4"><h4>Tshirt Size</h4></label>
+              <div className="columns small-8">
+                <select name="tshirt_size" className="landing-input"onChange={this.handleMember5TshirtSize}>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </div>
             </div>
 
           </div>
         </div>
-
+        <div className="columns small-12">
         <button type="submit" className="landing-button">Submit</button>
+        </div>
       </form>
     );
   }

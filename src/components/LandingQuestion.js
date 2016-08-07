@@ -1,34 +1,13 @@
 import React from 'react';
 import Typewriter from './Typewriter';
 import CenteredContainer from './CenteredContainer';
-import baffle from 'baffle';
+import theaterJS from 'theaterJS';
 
-
+let theater = theaterJS()
 
 const LandingQuestion = React.createClass({
     componentDidMount: function(){
-        let gibberish = [
-    '\u2588',
-    '\u2593',
-    '\u2592',
-    '\u2591',
-    '\u2588',
-    '\u2593',
-    '\u2592',
-    '\u2591',
-    '\u2588',
-    '\u2593',
-    '\u2592',
-    '\u2591',
-    '\u003c',
-    '\u003e',
-    '\u002f'
-];
-        baffle('.header-large-text')
-        .set({
-            characters: gibberish
-        })
-        .reveal(1500, 500);
+
     },
     render () {
 
