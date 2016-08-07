@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '6'
+- '5'
+after_success:
+- npm run test:cover:travis
+deploy:
+  provider: heroku
+  api_key:
+    secure: OXyCtbxE5N6aRKF1y2D7BazPcFD5Pwb64cpB0EMTcq5IKVxbNQGRy1n6ytqRTb23G/m2I1Iwg0/kWVBl3tstuJpFqe0iTCT8Y7qBRrXLZ+NdZC7vcaM+GXSIAZ5Bax4X1lkmcUr8+QHBR+jFOcQORO8ss5y9fZ+uRGg4b9q1mewke/4kTJRhAlUL1JVGQmB2YZKNSxFEBVIc5Z1Sq/khv04WdoUHbdMVRbpa1haOqfGjg1Pb4qLo3ME9niT1xN+ZNmrrhpvhTP81w4fqBPMDAkACRyaSlW819HvbrR5UfrzsQtkrPSVk88Nmz7opD0pjb0R/o0UNL/1nBixJZUsVaGHZhrfc2oEuLp9u7dmdfMvb0l1bvGRo55+fvjRXTcfPwpdpjoQ7+pKcyhDw53Vp4EcKYhHaDURMOLhD3bwY//+oTBLDcEzj/EVJJJWwQebU/oXZD9ay/a10r3YjBTIdZrBTHNOeoHePSmj10SFO81BhoGMaOCGk3AEj70OO9DfRDyqgE6P1MHSyX7f3uvsB4QZkeQbn8XDXWJnW+6QkKL0D4Wj1OwZZj/RdWwMmBJxbK3F+4ivdIPfjubtPpDR4L56SKcR4H/RL4OuT6R5N1XPoelzgFdqCnIBwtOYdzgGafLV8aNq9Tuw2fFK83fXcCZLJpcjobK+smHRuQwAAEsM=
+  app: phi-tau
+  on:
+    repo: bobrown101/phi-tau
