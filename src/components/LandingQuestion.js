@@ -1,9 +1,6 @@
 import React from 'react';
 import Typewriter from './Typewriter';
 import CenteredContainer from './CenteredContainer';
-import theaterJS from 'theaterJS';
-
-let theater = theaterJS()
 
 const LandingQuestion = React.createClass({
     componentDidMount: function(){
