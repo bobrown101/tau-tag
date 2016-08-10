@@ -14,7 +14,7 @@ const LandingQuestion = React.createClass({
             <div id="landing-container" className="animated fadeIn">
                 {/*<div id="background-image"></div>*/}
                 <div id="landing" className="text-center">
-                    <img id="large-logo" src={require('../images/tautaglogo.svg')} />
+                    <img id="large-logo" src={require('../images/tautaglogo-new.svg')} />
 
                     <Typewriter className="header-large-text animated fadeIn"
                     speed={1}
