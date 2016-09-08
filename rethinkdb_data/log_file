@@ -1,0 +1,28 @@
+2016-09-05T19:53:02.456171000 0.437387s notice: Recursively removing directory /Users/brady/Development/tau-tag/rethinkdb_data/tmp
+2016-09-05T19:53:02.458047000 0.439268s notice: Initializing directory /Users/brady/Development/tau-tag/rethinkdb_data
+2016-09-05T19:53:02.458159000 0.439375s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/brady/Development/tau-tag/rethinkdb_data' did not already exist or is empty.)
+2016-09-05T19:53:02.458198000 0.439413s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2016-09-05T19:53:02.463557000 0.444774s notice: Running on Darwin 15.5.0 x86_64
+2016-09-05T19:53:02.463612000 0.444827s notice: Loading data from directory /Users/brady/Development/tau-tag/rethinkdb_data
+2016-09-05T19:53:02.572354000 0.553570s info: Automatically using cache size of 568 MB
+2016-09-05T19:53:02.573359000 0.554574s notice: Listening for intracluster connections on port 29015
+2016-09-05T19:53:02.574595000 0.555811s notice: Listening for client driver connections on port 28015
+2016-09-05T19:53:02.574689000 0.555904s notice: Listening for administrative HTTP connections on port 8080
+2016-09-05T19:53:02.574691000 0.555907s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-09-05T19:53:02.574696000 0.555911s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-09-05T19:53:02.574697000 0.555913s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-09-05T19:53:02.574700000 0.555916s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-09-05T19:53:02.574703000 0.555919s notice: Server ready, "Bradys_MBP_wireless_rit_edu_tmo" f640744d-472c-4a53-afc4-8247bbb602e3
+2016-09-06T19:43:44.350382000 11576.913868s notice: Someone asked for the nonwhitelisted file "/sabnzbd/api".  If this should be accessible, add it to the static web assets.
+2016-09-08T14:17:19.515243000 0.433933s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2016-09-08T14:17:19.524005000 0.442692s notice: Running on Darwin 15.5.0 x86_64
+2016-09-08T14:17:19.524056000 0.442743s notice: Loading data from directory /Users/brady/Developer/tau-tag/rethinkdb_data
+2016-09-08T14:17:19.562969000 0.481656s info: Automatically using cache size of 433 MB
+2016-09-08T14:17:19.565100000 0.483786s notice: Listening for intracluster connections on port 29015
+2016-09-08T14:17:19.568355000 0.487041s notice: Listening for client driver connections on port 28015
+2016-09-08T14:17:19.568514000 0.487200s notice: Listening for administrative HTTP connections on port 8080
+2016-09-08T14:17:19.568517000 0.487203s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-09-08T14:17:19.568521000 0.487207s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-09-08T14:17:19.568523000 0.487209s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-09-08T14:17:19.568527000 0.487213s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-09-08T14:17:19.568531000 0.487217s notice: Server ready, "Bradys_MBP_wireless_rit_edu_tmo" f640744d-472c-4a53-afc4-8247bbb602e3

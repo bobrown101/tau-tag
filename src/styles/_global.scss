@@ -76,6 +76,12 @@ img {
   color: white;
 }
 
+.error {
+  color: #cc6666 !important;
+  font-weight: bold;
+  background-color: rgba(255,196,196,.2);
+}
+
 
 
 a {
@@ -168,6 +174,12 @@ cite {
   box-shadow: 0px 1px 19px 5px #9cf7a7 !important;
 }
 
+.success-box {
+  padding: 50px;
+  margin-top: 30px;
+  background-color: rgba(80, 184, 72, 0.55);
+}
+
 
 
 .main-container{
@@ -205,7 +217,7 @@ cite {
   background-size: cover;
   background-position: center;
   animation-duration: 2s;
-    
+
   #landing {
     padding-top: 5em;
     padding-bottom: 15em;
@@ -220,7 +232,7 @@ cite {
       font-size: 2.5rem;
       color: rgb(165, 165, 165);
       // font-weight: bold;
-      
+
       @media only screen and (max-width: 700px) {
         font-size: 2rem !important;
       }
@@ -394,7 +406,7 @@ input.landing-input, input.landing-input[type='text'], input.landing-input[type=
 
 
 .sponsor-container{
-  
+
   height: 6em;
   display: inline-block;
   margin-bottom: 2em;
@@ -471,4 +483,3 @@ a.styled-inline-link {
     background-color: rgba(0,0,0,0.3);
   }
 }
-

@@ -51,7 +51,7 @@ module.exports = {
     } catch (e) {
         // statements to handle TypeError exceptions
         // res.send({'message': "error creating db"});
-    } 
+    }
 
   },
   createSignUpTable: function(req, res, next){
@@ -60,7 +60,7 @@ module.exports = {
       res.send({"message": "Table created"});
     }).error(function(err){
       res.status(500);
-      res.send({'message': "Error creating sign up table"});  
+      res.send({'message': "Error creating sign up table"});
     });
   },
   createTeam: function(req, res){
@@ -114,7 +114,7 @@ module.exports = {
     }
     else{
 
-      //validate each member 
+      //validate each member
       let members = JSON.parse(req.body.members);
 
       for(let item in members) {
@@ -161,35 +161,61 @@ module.exports = {
         }
 
       }
-      r.db(config.rethinkdb.db_name).table(config.rethinkdb.signup_table).filter({team_name: req.body.team_name}).run(connection).then(function(result) {
-        result.toArray(function(err1, teams){
-          if(teams.length > 0){
-            res.status(409);
-            res.send({'message': "Team name has already been taken"});
-            return;
-          }
-          else{
-            r.db(config.rethinkdb.db_name).table(config.rethinkdb.signup_table).insert({
-                team_name: req.body.team_name,
-                members: JSON.parse(req.body.members),
-                contact_email: req.body.contact_email,
-                contact_phone_number: req.body.contact_phone_number
-            }).run(connection, function(err, insertResult){
-              if(err){
-                res.status(500);
-                res.send({'message': "There was an error saving your team. Please contact us!"});
-                return;
-              }else{
-                res.send({'message': 'Your team has been saved successfully!'});
+      //////////////////////////////////////////////////
+      // This next section will charge their credit card
+      //////////////////////////////////////////////////
+      // Set your secret key: remember to change this to your live secret key in production
+      // See your keys here: https://dashboard.stripe.com/account/apikeys
+      var stripe = require("stripe")("sk_test_pi8LBDkeAtNFLbZi6YaYGgCR");
+
+      // Get the credit card details submitted by the form
+      var token = request.body.stripeToken; // Using Express
+
+      // Create a charge: this will charge the user's card
+      var charge = stripe.charges.create({
+        amount: 96*100, // Amount in cents
+        currency: "usd",
+        source: token,
+        description: "Tau-Tag 6-person team registration"
+      }, function(err, charge) {
+        if (err && err.type === 'StripeCardError') {
+          // The card has been declined
+          res.status(500);
+          res.send({'message': "Your card has been declined."});
+          return;
+        }else{
+          r.db(config.rethinkdb.db_name).table(config.rethinkdb.signup_table).filter({team_name: req.body.team_name}).run(connection).then(function(result) {
+            result.toArray(function(err1, teams){
+              if(teams.length > 0){
+                res.status(409);
+                res.send({'message': "Team name has already been taken"});
                 return;
               }
+              else{
+                r.db(config.rethinkdb.db_name).table(config.rethinkdb.signup_table).insert({
+                    team_name: req.body.team_name,
+                    members: JSON.parse(req.body.members),
+                    contact_email: req.body.contact_email,
+                    contact_phone_number: req.body.contact_phone_number
+                }).run(connection, function(err, insertResult){
+                  if(err){
+                    res.status(500);
+                    res.send({'message': "There was an error saving your team. Please contact us!"});
+                    return;
+                  }else{
+                    res.send({'message': 'Your team has been saved successfully!'});
+                    return;
+                  }
+                });
+              }
             });
-          }
-        });
-      }).error(function(err){
-        res.status(500);
-        res.send({'message': "Internal error. Please notify us!"});
+          }).error(function(err){
+            res.status(500);
+            res.send({'message': "Internal error. Please notify us!"});
+          });
+        }
       });
+
     }
   },
   authenticateRoute: function(req, res, next) {

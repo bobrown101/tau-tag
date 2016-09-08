@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 // import {reduxForm} from 'redux-form';
+import PaymentForm from '../payment';
+
+// var ReactScriptLoaderMixin = require('react-script-loader').ReactScriptLoaderMixin;
 
 class RegisterForm extends Component {
   constructor(props){
@@ -7,8 +10,8 @@ class RegisterForm extends Component {
     this.state = {};
     RegisterForm.context = this;
   }
-  handleSubmit(){
-      console.info("Handle the submit");
+  handleSubmit(id){
+      console.info("Handle the submit", id);
   }
   handleTeamName(e){
     RegisterForm.context.setState({
@@ -150,7 +153,7 @@ class RegisterForm extends Component {
       member5_phone_number: e.target.value
     });
   }
-  
+
   render() {
     // const {fields: {team_name, number_members, members}, handleSubmit} = this.props;
     // let members_info = [];
@@ -163,9 +166,14 @@ class RegisterForm extends Component {
     //     </div>
     //     );
     // }
+    // <form onSubmit={this.handleSubmit} className="register-form">
+    // <button className="landing-button" onClick={this.makePayment}>Pay Now</button>
+
+
     return (
 
-      <form onSubmit={this.handleSubmit} className="register-form">
+      <form className="register-form">
+        <br/>
         <div className="small-12 large-8 large-offset-2 row">
             <div className="columns small-12">
               <div className="columns small-12">
@@ -295,7 +303,7 @@ class RegisterForm extends Component {
                   <option value="XL">XL</option>
                   <option value="XXL">XXL</option>
                 </select>
-              </div> 
+              </div>
 
             </div>
 
@@ -455,7 +463,8 @@ class RegisterForm extends Component {
           </div>
         </div>
         <div className="columns small-12">
-        <button type="submit" className="landing-button">Submit</button>
+          <PaymentForm paymentVerified={this.handleSubmit}/>
+
         </div>
       </form>
     );
