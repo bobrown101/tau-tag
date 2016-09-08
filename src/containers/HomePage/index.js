@@ -12,10 +12,10 @@ const HomePage = () => {
     function DayDiff(CurrentDate)
     {
       var TYear=CurrentDate.getFullYear();
-            var TDay=new Date("September, 10, 2016");
+            var TDay=new Date("October, 01, 2016");
             TDay.getFullYear(TYear);
             var DayCount=(TDay-CurrentDate)/(1000*60*60*24);
-            DayCount=Math.round(DayCount); 
+            DayCount=Math.round(DayCount);
         return(DayCount);
     }
 
@@ -73,9 +73,18 @@ const HomePage = () => {
         <CenteredContainer>
           <h1 className="styled-header">Details:</h1>
           <ul>
-            <li><h4>Open 12:00-20:00 hours - 9/19/16</h4></li>
-            <li><h4>Open matches - 12:00-5:00 hours</h4></li>
-            <li><h4>Bracketed Competition - 5:00-8:00 hours</h4></li>
+            <li><h4>Open Play: 2:00 PM - 4:00 PM</h4></li>
+            <li><h4>Registered Tournament: 4:00 PM - 8:00 PM</h4></li>
+            <li><h4>Location: Gordon Field House</h4></li>
+            <li><h4>Registered Team Size: 6 People</h4></li>
+            <li><h4>Teams - $90 ($15 per/person)</h4></li>
+            <li><h4>Individual - $16 per/person</h4></li>
+            <li><h4>Individual Open Play Pass - $30 per/person (2 hours, guarentees at least 2 games)</h4></li>
+            <li><h4>Registration open until all spots are full (20 Teams Max)</h4></li>
+
+
+
+
           </ul>
         </CenteredContainer>
       </Section>
