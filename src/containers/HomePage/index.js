@@ -73,20 +73,24 @@ const HomePage = () => {
       <Section inverted>
         <CenteredContainer>
           <h1 className="styled-header">Details:</h1>
-          <ul>
-            <li><h4>Open Play: 2:00 PM - 4:00 PM</h4></li>
-            <li><h4>Registered Tournament: 4:00 PM - 8:00 PM</h4></li>
-            <li><h4>Location: Gordon Field House</h4></li>
-            <li><h4>Registered Team Size: 6 People</h4></li>
-            <li><h4>Teams - $90 ($15 per/person)</h4></li>
-            <li><h4>Individual - $16 per/person</h4></li>
-            <li><h4>Individual Open Play Pass - $30 per/person (2 hours, guarentees at least 2 games)</h4></li>
-            <li><h4>Registration open until all spots are full (20 Teams Max)</h4></li>
+            <h4>Location: Gordon Field House</h4>
+            <h4>Open Play: 2:00 PM - 4:00 PM</h4>
+            <h4>Registered Team Tournament: 4:00 PM - 8:00 PM</h4>
+            <br/>
+            <br/>
+
+            <h4>Individual - $16 per/person</h4>
+            <h4>Individual Open Play Pass - $30 per/person (2 hours, guarantees at least 2 games)</h4>
+            <br/>
+            <br/>
+
+            <h4>Registered Team Size: 6 People</h4>
+            <h4>Teams - $90 ($15 per/person)</h4>
+            <h4>Team registration open until all spots are full (20 teams max)</h4>
 
 
 
 
-          </ul>
         </CenteredContainer>
       </Section>
       <Section>
