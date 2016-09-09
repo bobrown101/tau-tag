@@ -7,6 +7,7 @@ import CountTo from 'react-count-to';
 import RegisterForm from '../../forms/register/index.js';
 
 
+
 const HomePage = () => {
 
     function DayDiff(CurrentDate)
@@ -26,7 +27,7 @@ const HomePage = () => {
       <Section>
 
         <div className="columns small-12 medium-4">
-          <h1 className="countup-number"><CountTo to={30000} speed={8000} /></h1>
+          <h1 className="countup-number"><CountTo to={160000} speed={8000} /></h1>
           <h3 className="styled-header">Square Feet</h3>
         </div>
         <div className="columns small-12 medium-4">
@@ -34,40 +35,40 @@ const HomePage = () => {
           <h3 className="styled-header">Obstacles & Weapons</h3>
         </div>
         <div className="columns small-12 medium-4">
-          <h1 className="countup-number"><CountTo to={37} speed={8000} /></h1>
+          <h1 className="countup-number"><CountTo to={2} speed={8000} /></h1>
           <h3 className="styled-header">Pre-registered Teams</h3>
         </div>
       </Section>
       <Section inverted>
         <CenteredContainer>
           <h1 className="styled-header">T-minus {z1} days</h1>
-          <h4>Sep 19th 2016</h4>
+          <h4>Oct 1st 2016</h4>
         </CenteredContainer>
       </Section>
       <Section>
         <CenteredContainer>
           <h4>Brought to you by:</h4>
           <h1 className="styled-header">PHI KAPPA TAU</h1>
-          <h4>Sponsored by:</h4>
+          {/*<h4>Sponsored by:</h4> */}
         </CenteredContainer>
-        <div className="row columns">
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-        </div>
-        <div className="row columns">
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-        </div>
-        <div className="row columns">
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-          <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
-        </div>
+        {/*         <div className="row columns">
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                </div>
+                <div className="row columns">
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                </div>
+                <div className="row columns">
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                  <div className="sponsor-container small-6 medium-3"><div className="sponsor"></div></div>
+                </div>*/}
       </Section>
       <Section inverted>
         <CenteredContainer>
@@ -89,8 +90,10 @@ const HomePage = () => {
         </CenteredContainer>
       </Section>
       <Section>
-        <h1 className="styled-header">Register Now</h1>
-        <RegisterForm/>
+        <h1 id="registration" className="styled-header">Registration will open: Sep 19th 2016</h1>
+        {/* <h1 className="styled-header">Register Now</h1>
+        <RegisterForm/>*/}
+
 
       </Section>
 
