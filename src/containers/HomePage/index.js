@@ -27,11 +27,11 @@ const HomePage = () => {
       <Section>
 
         <div className="columns small-12 medium-4">
-          <h1 className="countup-number"><CountTo to={160000} speed={8000} /></h1>
+          <h1 className="countup-number"><CountTo to={60000} speed={8000} /></h1>
           <h3 className="styled-header">Square Feet</h3>
         </div>
         <div className="columns small-12 medium-4">
-          <h1 className="countup-number"><CountTo to={360} speed={8000} /></h1>
+          <h1 className="countup-number"><CountTo to={100} speed={8000} /></h1>
           <h3 className="styled-header">Obstacles & Weapons</h3>
         </div>
         <div className="columns small-12 medium-4">
@@ -73,22 +73,47 @@ const HomePage = () => {
       <Section inverted>
         <CenteredContainer>
           <h1 className="styled-header">Details:</h1>
-            <h4>Location: Gordon Field House</h4>
-            <h4>Open Play: 2:00 PM - 4:00 PM</h4>
-            <h4>Registered Team Tournament: 4:00 PM - 8:00 PM</h4>
+            <br/>
+            <br/>
+            <div className="small-8 small-offset-2">
+            <h4 className="styled-header">Join us in turning the Gordon Field House into the ultimate laser tag battlefield!
+            The brothers of Phi Kappa Tau will be hosting Tau Tag, a charity laser tag tounament filled with lights, music, and the best equipment around.
+            Competitors will face off against other teams in a number of different game styles such as domination, capture the flag, and more.</h4>
+            </div>
+            <br/>
+            <br/>
+            <h3 className="styled-header">When:</h3>
+            <h4>October 1st 2016</h4>
+            <h4>Open Play: 2:00 PM - 4:00 PM (Teams and individuals welcome)</h4>
+            <h4>Registration Tournament: 4:00 PM - 8:00 PM (Teams of 6)</h4>
+
             <br/>
             <br/>
 
-            <h4>Individual - $16 per/person</h4>
-            <h4>Individual Open Play Pass - $30 per/person (2 hours, guarantees at least 2 games)</h4>
+            <h3 className="styled-header">Where:</h3>
+            <h4>Gordon Field House</h4>
+
+            <br/>
+            <br/>
+            <h3 className="styled-header">The Cause:</h3>
+
+            <h4>{"All proceeds go to the Serious Fun Children's Network"}</h4>
+
+            <br/>
+            <br/>
+            <h3 className="styled-header">Cost:</h3>
+
+            <h4>$15 per player for registration tournament (4:00-8:00)</h4>
+            <h4>$16 per player for open play (2:00-4:00)</h4>
+            <h4>$30 per player for open play PASS (guarentees at least 2 games)</h4>
+            <h4>$3 for spectators</h4>
+
             <br/>
             <br/>
 
-            <h4>Registered Team Size: 6 People</h4>
-            <h4>Teams - $90 ($15 per/person)</h4>
-            <h4>Team registration open until all spots are full (20 teams max)</h4>
+            <h3 className="styled-header">How to Register:</h3>
 
-
+            <h4>Registration for the 4:00pm-8:00pm tournament can be done online or in person! Online registration opens September 19th.</h4>
 
 
         </CenteredContainer>
