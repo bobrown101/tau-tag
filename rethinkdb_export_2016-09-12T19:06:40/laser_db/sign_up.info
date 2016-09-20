@@ -1,0 +1,1 @@
+{"primary_key": "id", "indexes": [], "doc_count_estimates": [12], "type": "TABLE", "id": "4f9e469c-6848-46ac-8f5d-6e7eb4f24fe1", "db": {"type": "DB", "name": "laser_db", "id": "bacd0a1f-7763-4724-a0e3-edae3f33e8fd"}, "name": "sign_up"}

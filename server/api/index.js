@@ -64,6 +64,7 @@ module.exports = {
     });
   },
   createTeam: function(req, res){
+    console.log(req.body);
     if(!req.body.team_name){
       res.status(409);
       res.send({'message': "Team Name not provided"});
@@ -84,14 +85,14 @@ module.exports = {
       res.send({'message': "Team members not provided"});
       return;
     }
-    else if(! (req.body.members.length >= config.min_users) ){
-      let members = JSON.parse(req.body.members);
-
-      let more_members = (config.min_users - members.length);
-      res.status(409);
-      res.send({'message': "You need " + more_members + " more members to register"});
-      return;
-    }
+    // else if(! (req.body.members.length >= config.min_users) ){
+    //   let members = JSON.parse(req.body.members);
+    //
+    //   let more_members = (config.min_users - members.length);
+    //   res.status(409);
+    //   res.send({'message': "You need " + more_members + " more members to register"});
+    //   return;
+    // }
     else if(!req.body.contact_email){
       res.status(409);
       res.send({'message': "Contact email not provided"});
@@ -117,50 +118,50 @@ module.exports = {
       //validate each member
       let members = JSON.parse(req.body.members);
 
-      for(let item in members) {
-        let member = members[item];
-        if(!member.first_name){
-          res.status(409);
-          res.send({'message': "First name of team member not provided"});
-          return;
-        }
-        else if(!member.last_name){
-          res.status(409);
-          res.send({'message': "Last name of team member not provided"});
-          return;
-        }
-        else if(!member.email){
-          res.status(409);
-          res.send({'message': "Email of team member not provided"});
-          return;
-        }
-        else if(!validate_email(member.email)){
-          res.status(409);
-          res.send({'message': "Email of team member not valid"});
-          return;
-        }
-        else if(!member.tshirt_size){
-          res.status(409);
-          res.send({'message': "Tshirt size of member not provided"});
-          return;
-        }
-        else if(!validate_tshirt(member.tshirt_size)){
-          res.status(409);
-          res.send({'message': "Tshirt size of member not valid"});
-          return;
-        }
-        else if(!member.phone_number){
-          res.status(409);
-          res.send({'message': "Phone number of member not provided"});
-          return;
-        }
-        else if(!validate_phone(member.phone_number)){
-          res.status(409);
-          res.send({'message': "Phone number of member not valid"});
-          return;
-        }
-
-      }
+      // for(let item in members) {
+      //   let member = members[item];
+      //   if(!member.first_name){
+      //     res.status(409);
+      //     res.send({'message': "First name of team member not provided"});
+      //     return;
+      //   }
+      //   else if(!member.last_name){
+      //     res.status(409);
+      //     res.send({'message': "Last name of team member not provided"});
+      //     return;
+      //   }
+      //   else if(!member.email){
+      //     res.status(409);
+      //     res.send({'message': "Email of team member not provided"});
+      //     return;
+      //   }
+      //   else if(!validate_email(member.email)){
+      //     res.status(409);
+      //     res.send({'message': "Email of team member not valid"});
+      //     return;
+      //   }
+      //   else if(!member.tshirt_size){
+      //     res.status(409);
+      //     res.send({'message': "Tshirt size of member not provided"});
+      //     return;
+      //   }
+      //   else if(!validate_tshirt(member.tshirt_size)){
+      //     res.status(409);
+      //     res.send({'message': "Tshirt size of member not valid"});
+      //     return;
+      //   }
+      //   else if(!member.phone_number){
+      //     res.status(409);
+      //     res.send({'message': "Phone number of member not provided"});
+      //     return;
+      //   }
+      //   else if(!validate_phone(member.phone_number)){
+      //     res.status(409);
+      //     res.send({'message': "Phone number of member not valid"});
+      //     return;
+      //   }
+      //
+      // }
       //////////////////////////////////////////////////
       // This next section will charge their credit card
       //////////////////////////////////////////////////
@@ -169,14 +170,15 @@ module.exports = {
       var stripe = require("stripe")("sk_test_pi8LBDkeAtNFLbZi6YaYGgCR");
 
       // Get the credit card details submitted by the form
-      var token = request.body.stripeToken; // Using Express
+      var token = req.body.stripeToken; // Using Express
 
       // Create a charge: this will charge the user's card
       var charge = stripe.charges.create({
-        amount: 96*100, // Amount in cents
+        amount: 90*100, // Amount in cents
         currency: "usd",
         source: token,
-        description: "Tau-Tag 6-person team registration"
+        description: ("Tau-Tag Team registration - " + req.body.contact_email),
+        receipt_email: req.body.contact_email
       }, function(err, charge) {
         if (err && err.type === 'StripeCardError') {
           // The card has been declined

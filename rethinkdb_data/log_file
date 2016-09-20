@@ -74,3 +74,22 @@
 2016-09-11T15:45:41.572491000 0.480387s notice: Listening on http addresses: 127.0.0.1, ::1
 2016-09-11T15:45:41.572494000 0.480390s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2016-09-11T15:45:41.572497000 0.480393s notice: Server ready, "Bradys_MBP_wireless_rit_edu_tmo" f640744d-472c-4a53-afc4-8247bbb602e3
+2016-09-12T18:04:16.462701000 22383.213168s info: Table 4f9e469c-6848-46ac-8f5d-6e7eb4f24fe1: Starting a new Raft election for term 1.
+2016-09-12T18:04:16.462912000 22383.213380s info: Table 4f9e469c-6848-46ac-8f5d-6e7eb4f24fe1: Added replica on this server.
+2016-09-12T18:04:16.487857000 22383.238324s info: Table 4f9e469c-6848-46ac-8f5d-6e7eb4f24fe1: This server is Raft leader for term 1. Latest log index is 0.
+2016-09-20T14:43:25.908016000 0.392405s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2016-09-20T14:43:25.915966000 0.400352s notice: Running on Darwin 15.6.0 x86_64
+2016-09-20T14:43:25.916003000 0.400388s notice: Loading data from directory /Users/brady/Developer/tau-tag/rethinkdb_data
+2016-09-20T14:43:25.947385000 0.431770s info: Automatically using cache size of 100 MB
+2016-09-20T14:43:25.947393000 0.431778s warn: Cache size does not leave much memory for server and query overhead (available memory: 1053 MB).
+2016-09-20T14:43:25.947397000 0.431782s warn: Cache size is very low and may impact performance.
+2016-09-20T14:43:25.948635000 0.433021s notice: Listening for intracluster connections on port 29015
+2016-09-20T14:43:25.962602000 0.446987s notice: Listening for client driver connections on port 28015
+2016-09-20T14:43:25.962713000 0.447098s notice: Listening for administrative HTTP connections on port 8080
+2016-09-20T14:43:25.962715000 0.447100s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-09-20T14:43:25.962717000 0.447102s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-09-20T14:43:25.962718000 0.447103s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-09-20T14:43:25.962803000 0.447188s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-09-20T14:43:25.962805000 0.447190s notice: Server ready, "Bradys_MBP_wireless_rit_edu_tmo" f640744d-472c-4a53-afc4-8247bbb602e3
+2016-09-20T14:43:27.924871000 2.409149s info: Table 4f9e469c-6848-46ac-8f5d-6e7eb4f24fe1: Starting a new Raft election for term 2.
+2016-09-20T14:43:27.946070000 2.430348s info: Table 4f9e469c-6848-46ac-8f5d-6e7eb4f24fe1: This server is Raft leader for term 2. Latest log index is 2.

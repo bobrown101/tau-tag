@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactScriptLoaderMixin = require('react-script-loader').ReactScriptLoaderMixin;
 
+
 var PaymentForm = React.createClass({
   mixins: [ ReactScriptLoaderMixin ],
 
@@ -41,10 +42,21 @@ var PaymentForm = React.createClass({
         self.setState({ paymentError: response.error.message, submitDisabled: false });
       }
       else {
-        self.setState({ paymentComplete: true, submitDisabled: false, token: response.id });
-        console.log("Payment has been verified");
-        console.log(self.props);
-        self.props.paymentVerified(response.id);
+        self.props.paymentVerified(response.id, function(api_response, api_message){
+          console.log("callback got called");
+            if(api_response == true){
+              self.setState({ paymentComplete: true, submitDisabled: false});
+
+            }else{
+              console.log("Here is the api_message", api_message);
+              console.log(api_message);
+              self.setState({ paymentError: api_message.data.message, submitDisabled: false });
+            }
+
+
+
+        });
+
       }
     });
   },
@@ -57,7 +69,7 @@ var PaymentForm = React.createClass({
       return <h3 className="styled-header">Error</h3>;
     }
     else if (this.state.paymentComplete) {
-      return (<div className="success-box">
+      return (<div className="success-box small-8 small-offset-2">
         <h3 className="styled-header">{"Payment Complete!"}</h3>
         <h3 className="styled-header">{"Your team is registered. You will hear from us closer to the event"}</h3>
         <img src={require("../../images/check-mark.svg")} />
@@ -66,7 +78,7 @@ var PaymentForm = React.createClass({
 
     }
     else {
-      return (<form onSubmit={this.onSubmit} >
+      return (<form onSubmit={this.onSubmit} className="small-8 small-offset-2">
         <br />
         <br />
         <br />
@@ -83,7 +95,7 @@ var PaymentForm = React.createClass({
         <input type='text' data-stripe='exp-month' placeholder='XX' className="columns landing-input columns small-8" /><br />
 
         <label><h4>{"Expiration Year"}</h4></label>
-        <input type='text' data-stripe='exp-year' placeholder='XX' className="columns landing-input columns small-8" /><br />
+        <input type='text' data-stripe='exp-year' placeholder='XXXX' className="columns landing-input columns small-8" /><br />
 
         <label><h4>{"CVC (3-digit code on the back)"}</h4></label>
         <input type='text' data-stripe='cvc' placeholder='XXX' className="columns landing-input columns small-8" /><br />

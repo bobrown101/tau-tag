@@ -35,8 +35,8 @@ const HomePage = () => {
           <h3 className="styled-header">Obstacles & Weapons</h3>
         </div>
         <div className="columns small-12 medium-4">
-          <h1 className="countup-number"><CountTo to={2} speed={8000} /></h1>
-          <h3 className="styled-header">Pre-registered Teams</h3>
+          <h1 className="countup-number">FREE</h1>
+          <h3 className="styled-header">Price</h3>
         </div>
       </Section>
       <Section inverted>
@@ -72,7 +72,7 @@ const HomePage = () => {
       </Section>
       <Section inverted>
         <CenteredContainer>
-          <h1 className="styled-header">Details:</h1>
+          <h1 id="details" className="styled-header">Details:</h1>
             <br/>
             <br/>
             <div className="small-8 small-offset-2">
@@ -84,8 +84,7 @@ const HomePage = () => {
             <br/>
             <h3 className="styled-header">When:</h3>
             <h4>October 1st 2016</h4>
-            <h4>Open Play: 2:00 PM - 4:00 PM (Teams and individuals welcome)</h4>
-            <h4>Registration Tournament: 4:00 PM - 8:00 PM (Teams of 6)</h4>
+            <h4>Open Play: 2:00 PM - 8:00 PM</h4>
 
             <br/>
             <br/>
@@ -103,28 +102,22 @@ const HomePage = () => {
             <br/>
             <h3 className="styled-header">Cost:</h3>
 
-            <h4>$15 per player for registration tournament (4:00-8:00)</h4>
-            <h4>$16 per player for open play (2:00-4:00)</h4>
-            <h4>$30 per player for open play PASS (guarentees at least 2 games)</h4>
-            <h4>$3 for spectators</h4>
+            <h4>Free for open play (2:00-8:00)</h4>
+            <h4>Spectators welcome</h4>
 
             <br/>
             <br/>
-
-            <h3 className="styled-header">How to Register:</h3>
-
-            <h4>Registration for the 4:00pm-8:00pm tournament can be done online or in person! Online registration opens September 19th.</h4>
-
 
         </CenteredContainer>
       </Section>
-      <Section>
-        <h1 id="registration" className="styled-header">Registration will open: Sep 19th 2016</h1>
-        {/* <h1 className="styled-header">Register Now</h1>
-        <RegisterForm/>*/}
+      {/*       <Section>
+
+              <h1 className="styled-header">Register Now</h1>
+              <RegisterForm/>
 
 
-      </Section>
+            </Section> */}
+
 
 
     </div>

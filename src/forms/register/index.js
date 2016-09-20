@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 // import {reduxForm} from 'redux-form';
 import PaymentForm from '../payment';
+import axios from 'axios';
+
 
 // var ReactScriptLoaderMixin = require('react-script-loader').ReactScriptLoaderMixin;
 
@@ -10,8 +12,69 @@ class RegisterForm extends Component {
     this.state = {};
     RegisterForm.context = this;
   }
-  handleSubmit(id){
+  submit(id, callback){
       console.info("Handle the submit", id);
+      console.log("Here is the state");
+      console.log(this);
+
+      let members = [];
+      members.push({
+        first_name: RegisterForm.context.state.member1_first_name,
+        last_name: RegisterForm.context.state.member1_last_name,
+        email: RegisterForm.context.state.member1_email,
+        phone_number: RegisterForm.context.state.member1_phone_number
+      });
+      members.push({
+        first_name: RegisterForm.context.state.member2_first_name,
+        last_name: RegisterForm.context.state.member2_last_name,
+        email: RegisterForm.context.state.member2_email,
+        phone_number: RegisterForm.context.state.member2_phone_number
+      });
+      members.push({
+        first_name: RegisterForm.context.state.member3_first_name,
+        last_name: RegisterForm.context.state.member3_last_name,
+        email: RegisterForm.context.state.member3_email,
+        phone_number: RegisterForm.context.state.member3_phone_number
+      });
+      members.push({
+        first_name: RegisterForm.context.state.member4_first_name,
+        last_name: RegisterForm.context.state.member4_last_name,
+        email: RegisterForm.context.state.member4_email,
+        phone_number: RegisterForm.context.state.member4_phone_number
+      });
+      members.push({
+        first_name: RegisterForm.context.state.member5_first_name,
+        last_name: RegisterForm.context.state.member5_last_name,
+        email: RegisterForm.context.state.member5_email,
+        phone_number: RegisterForm.context.state.member5_phone_number
+      });
+
+      axios({
+        method: 'post',
+        url: '/api/v1/createTeam',
+        data: {
+          stripeToken: id,
+          team_name: RegisterForm.context.state.team_name,
+          contact_email: RegisterForm.context.state.contact_email,
+          contact_phone_number: RegisterForm.context.state.contact_phone_number,
+          members: JSON.stringify(members)
+
+        }
+      })
+      .then(function (response) {
+        console.log("create team reponse");
+        console.log(response);
+
+        console.log("Sending back 'Payment verified' - basically making the check mark");
+        callback(true)
+
+      })
+      .catch(function (error) {
+        console.log("error create team: ");
+        console.log(error);
+        callback(false, error)
+      });
+
   }
   handleTeamName(e){
     RegisterForm.context.setState({
@@ -155,7 +218,7 @@ class RegisterForm extends Component {
   }
 
   render() {
-    // const {fields: {team_name, number_members, members}, handleSubmit} = this.props;
+    // const {fields: {team_name, number_members, members}, mit} = this.props;
     // let members_info = [];
     // console.log(this);
     // for(let x = 0; x < this.props.values.number_members; x++){
@@ -166,7 +229,7 @@ class RegisterForm extends Component {
     //     </div>
     //     );
     // }
-    // <form onSubmit={this.handleSubmit} className="register-form">
+    // <form onSubmit={this.mit} className="register-form">
     // <button className="landing-button" onClick={this.makePayment}>Pay Now</button>
 
 
@@ -204,7 +267,7 @@ class RegisterForm extends Component {
 
         <div>
           <h2 className="styled-header">Members</h2>
-          <h6 className="styled-header medium-6 medium-offset-3">* We won't validate your members info because we understand it's difficult to collect all that, however, do understand that it may lead to someone not getting a t-shirt or not getting notified of a game</h6>
+          <h6 className="styled-header medium-6 medium-offset-3">* We won't validate your members info because we understand it's difficult to collect all that, however, do understand that it may lead to issues</h6>
           <div className="small-12 large-8 large-offset-2">
             <h3 className="styled-header">Member 1</h3>
             <div className="columns small-12">
@@ -237,21 +300,6 @@ class RegisterForm extends Component {
               </div>
               <div className="small-12 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember1PhoneNumber} />
-              </div>
-            </div>
-            <div className="columns small-12">
-              <div className="columns small-12">
-                <label className="text-left"><h4>Tshirt Size</h4></label>
-              </div>
-              <div className="column small-12">
-                <select name="tshirt_size" className="landing-input"onChange={this.handleMember1TshirtSize}>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
               </div>
             </div>
 
@@ -290,22 +338,6 @@ class RegisterForm extends Component {
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember2PhoneNumber} />
               </div>
             </div>
-            <div className="columns small-12">
-              <div className="columns small-12">
-                <label className="text-left"><h4>Tshirt Size</h4></label>
-              </div>
-              <div className="column small-12">
-                <select name="tshirt_size" className="landing-input"onChange={this.handleMember2TshirtSize}>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-              </div>
-
-            </div>
 
           </div>
           <div className="small-12 large-8 large-offset-2">
@@ -340,21 +372,6 @@ class RegisterForm extends Component {
               </div>
               <div className="small-12 columns">
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember3PhoneNumber} />
-              </div>
-            </div>
-            <div className="columns small-12">
-              <div className="columns small-12">
-                <label className="text-left"><h4>Tshirt Size</h4></label>
-              </div>
-              <div className="column small-12">
-                <select name="tshirt_size" className="landing-input"onChange={this.handleMember3TshirtSize}>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
               </div>
             </div>
 
@@ -393,21 +410,6 @@ class RegisterForm extends Component {
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember4PhoneNumber} />
               </div>
             </div>
-            <div className="columns small-12">
-              <div className="columns small-12">
-                <label className="text-left"><h4>Tshirt Size</h4></label>
-              </div>
-              <div className="column small-12">
-                <select name="tshirt_size" className="landing-input"onChange={this.handleMember4TshirtSize}>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-              </div>
-            </div>
 
           </div>
           <div className="small-12 large-8 large-offset-2">
@@ -444,26 +446,11 @@ class RegisterForm extends Component {
                 <input type="text" className="columns landing-input columns small-8"onChange={this.handleMember5PhoneNumber} />
               </div>
             </div>
-            <div className="columns small-12">
-              <div className="columns small-12">
-                <label className="text-left"><h4>Tshirt Size</h4></label>
-              </div>
-              <div className="column small-12">
-                <select name="tshirt_size" className="landing-input"onChange={this.handleMember5TshirtSize}>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-              </div>
-            </div>
 
           </div>
         </div>
         <div className="columns small-12">
-          <PaymentForm paymentVerified={this.handleSubmit}/>
+          <PaymentForm paymentVerified={this.submit}/>
 
         </div>
       </form>

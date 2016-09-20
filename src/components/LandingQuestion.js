@@ -7,7 +7,7 @@ const LandingQuestion = React.createClass({
 
     },
     scrollDown: function() {
-      var myDiv = document.getElementById('registration');
+      var myDiv = document.getElementById('details');
       // console.log(myDiv);
       // window.scrollBy(myDiv, 0,100)
       myDiv.scrollIntoView();
@@ -36,7 +36,7 @@ const LandingQuestion = React.createClass({
                     randomSpeed={true} />
 
                     <CenteredContainer>
-                        <div onClick={this.scrollDown}className="landing-button animated fadeIn delay4">Register Now</div>
+                        <div onClick={this.scrollDown}className="landing-button animated fadeIn delay4">Find Out More</div>
                     </CenteredContainer>
 
                     <CenteredContainer>
